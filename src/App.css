@@ -1,0 +1,19 @@
+:root {
+  --teal: #037682;
+  --lightgrey: #f2f2f2;
+  --grey: #8d8d8d;
+}
+
+main {
+  padding-top: 62px;
+}
+
+.container {
+  width: 86vw;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+}

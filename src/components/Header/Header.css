@@ -1,0 +1,53 @@
+header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #e9ebeb;
+}
+
+header .container {
+  padding: 8px;
+  width: 86vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+header img {
+  height: 45px;
+}
+
+.input-search {
+  background-color: var(--lightgrey);
+  border-radius: 10px;
+  height: 40px;
+  flex-grow: 0.7;
+  position: relative;
+  padding-left: 30px;
+}
+
+.input-search:before {
+  position: absolute;
+  font-family: "FontAwesome";
+  top: 8px;
+  left: 10px;
+  content: "\f002";
+  color: black;
+  font-size: 20px;
+}
+
+button {
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 8px 16px;
+  margin-left: 8px;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  background-color: white;
+}
+
+button.teal {
+  background-color: var(--teal);
+  color: white;
+}
