@@ -3,6 +3,7 @@ header {
   position: fixed;
   width: 100%;
   border-bottom: 1px solid #e9ebeb;
+  z-index: 1;
 }
 
 header .container {
