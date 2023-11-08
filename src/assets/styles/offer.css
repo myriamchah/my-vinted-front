@@ -1,0 +1,20 @@
+.offer-container {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.offer-img {
+  max-width: 30vw;
+  height: 80vh;
+}
+
+.offer-card {
+  background: white;
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  height: 80vh;
+}

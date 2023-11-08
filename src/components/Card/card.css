@@ -1,6 +1,7 @@
 .card-article {
   width: 16vw;
   height: 360px;
+  text-decoration: none;
 }
 
 .card-article > img {
