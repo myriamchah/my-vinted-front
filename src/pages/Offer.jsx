@@ -31,8 +31,8 @@ const Offer = () => {
               alt={offer.product_name}
             />
             <div className="offer-card">
-              <div className="offer-price">{offer.product_price} €</div>
-              <div className="product-info">
+              <h1>{offer.product_price} €</h1>
+              <div className="offer-product-info">
                 {offer.product_details.map((detail, i) => {
                   return (
                     <div key={i}>
@@ -54,7 +54,7 @@ const Offer = () => {
                 />
                 <span>{offer.owner && offer.owner.account.username}</span>
               </div>
-              <button className="teal">Acheter</button>
+              <button className="teal">ACHETER</button>
             </div>
           </section>
         </main>

@@ -18,3 +18,27 @@
   padding: 32px;
   height: 80vh;
 }
+
+.offer-product-info {
+  margin-top: 24px;
+}
+
+.offer-product-info span {
+  width: 50%;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.offer-product-info span:first-of-type {
+  color: var(--grey);
+}
+
+.offer-product-info span:last-of-type {
+  color: var(--darkgrey);
+  font-weight: 600;
+}
+
+.offer-info .name {
+  font-weight: 600;
+  margin-bottom: 12px;
+}

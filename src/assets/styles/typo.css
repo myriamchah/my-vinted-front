@@ -6,3 +6,8 @@ h1 {
   font-size: 32px;
   font-weight: 600;
 }
+
+hr {
+  margin: 32px 0;
+  border: 1px solid var(--lightgrey);
+}
