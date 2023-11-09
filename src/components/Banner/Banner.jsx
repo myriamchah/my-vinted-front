@@ -1,4 +1,5 @@
 import "./Banner.css";
+import tear from "../../assets/img/tear.svg";
 
 const Banner = () => {
   return (
@@ -9,6 +10,7 @@ const Banner = () => {
           <button className="teal">Commencer à vendre</button>
         </div>
       </div>
+      <img src={tear} alt="" />
     </section>
   );
 };

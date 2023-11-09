@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 400px;
+  height: 420px;
   position: relative;
   width: 100%;
 }
@@ -26,4 +26,10 @@
 .card button {
   font-size: 16px;
   padding: 16px;
+}
+
+.banner img {
+  position: absolute;
+  bottom: 0px;
+  left: 240px;
 }
