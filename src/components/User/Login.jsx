@@ -5,7 +5,6 @@ import axios from "axios";
 
 const Login = ({ setUser, setModalForm }) => {
   const [account, setAccount] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -21,6 +20,7 @@ const Login = ({ setUser, setModalForm }) => {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
+      console.log(account);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         {
@@ -30,6 +30,7 @@ const Login = ({ setUser, setModalForm }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
+        console.log(response.data.token);
         navigate("/");
       } else {
         alert("Oops! Please try again.");
@@ -44,12 +45,14 @@ const Login = ({ setUser, setModalForm }) => {
       <form onSubmit={onSubmit} className="account-form">
         <input
           type="email"
+          name="email"
           placeholder="Email"
           value={account.email}
           onChange={onChange}
         />
         <input
           type="password"
+          name="password"
           placeholder="Mot de passe"
           value={account.password}
           onChange={onChange}

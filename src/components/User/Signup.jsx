@@ -21,6 +21,7 @@ const Signup = ({ setUser, setModalForm }) => {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
+      console.log(account);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
@@ -45,6 +46,7 @@ const Signup = ({ setUser, setModalForm }) => {
       <form onSubmit={onSubmit} className="account-form">
         <input
           type="text"
+          name="username"
           placeholder="Nom d'utilisateur"
           value={account.username}
           onChange={onChange}
@@ -52,12 +54,14 @@ const Signup = ({ setUser, setModalForm }) => {
         <input
           type="email"
           placeholder="Email"
+          name="email"
           value={account.email}
           onChange={onChange}
         />
         <input
           type="password"
           placeholder="Mot de passe"
+          name="password"
           value={account.password}
           onChange={onChange}
         />
