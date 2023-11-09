@@ -6,10 +6,13 @@ const Card = ({ offer }) => {
   return (
     <Link to={`/offer/${offer._id}`} className="card-article">
       <div className="avatar">
-        <img
-          src={offer.owner.account.avatar.secure_url}
-          alt={"avatar" + offer.owner.account.username}
-        />
+        {offer.owner.account.avatar && (
+          <img
+            src={offer.owner.account.avatar.secure_url}
+            alt={"avatar" + offer.owner.account.username}
+          />
+        )}
+
         <span>{offer.owner && offer.owner.account.username}</span>
       </div>
 

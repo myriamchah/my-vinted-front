@@ -10,7 +10,7 @@ const Banner = () => {
           <button className="teal">Commencer à vendre</button>
         </div>
       </div>
-      <img src={tear} alt="" />
+      <img src={tear} alt="torn white effect" />
     </section>
   );
 };
