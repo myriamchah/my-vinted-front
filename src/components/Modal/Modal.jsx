@@ -19,9 +19,9 @@ const Modal = ({ setShowModal, setUser, modalForm, setModalForm }) => {
           />
         </div>
         {modalForm === "Signup" ? (
-          <Signup {...{ setUser, setModalForm }} />
+          <Signup {...{ setUser, setModalForm, setShowModal }} />
         ) : (
-          <Login {...{ setUser, setModalForm }} />
+          <Login {...{ setUser, setModalForm, setShowModal }} />
         )}
       </div>
     </div>

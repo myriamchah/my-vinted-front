@@ -7,6 +7,7 @@
   --lightgrey: #f2f2f2;
   --grey: #8d8d8d;
   --darkgrey: #666666;
+  --coral: coral;
 }
 
 main {
@@ -42,5 +43,11 @@ button {
 
 button.teal {
   background-color: var(--teal);
+  color: white;
+}
+
+button.coral {
+  background-color: var(--coral);
+  border-color: var(--coral);
   color: white;
 }

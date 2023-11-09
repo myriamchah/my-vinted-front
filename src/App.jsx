@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Router>
-      <Header {...{ setShowModal, setModalForm }} />
+      <Header {...{ token, setUser, setShowModal, setModalForm }} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />

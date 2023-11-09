@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./form.css";
 import axios from "axios";
 
-const Signup = ({ setUser, setModalForm }) => {
+const Signup = ({ setUser, setModalForm, setShowModal }) => {
   const [account, setAccount] = useState({
     username: "",
     email: "",
@@ -21,7 +21,6 @@ const Signup = ({ setUser, setModalForm }) => {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(account);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
@@ -32,6 +31,8 @@ const Signup = ({ setUser, setModalForm }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
+        alert("Account successfully created");
+        setShowModal(false);
         navigate("/");
       } else {
         alert("Oops! Please try again.");
