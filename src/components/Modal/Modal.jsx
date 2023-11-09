@@ -1,10 +1,10 @@
 import Signup from "../User/Signup";
-// import Login from "../User/Login";
+import Login from "../User/Login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 <FontAwesomeIcon icon="magnifying-glass" className="icon" />;
 import "./modal.css";
 
-const Modal = ({ setShowModal, setUser, modalForm }) => {
+const Modal = ({ setShowModal, setUser, modalForm, setModalForm }) => {
   return (
     <div className="modal">
       <div className="modal-content">
@@ -19,11 +19,9 @@ const Modal = ({ setShowModal, setUser, modalForm }) => {
           />
         </div>
         {modalForm === "Signup" ? (
-          <Signup {...{ setUser }} />
+          <Signup {...{ setUser, setModalForm }} />
         ) : (
-          {
-            /* <Login {...{setUser }}/> */
-          }
+          <Login {...{ setUser, setModalForm }} />
         )}
       </div>
     </div>

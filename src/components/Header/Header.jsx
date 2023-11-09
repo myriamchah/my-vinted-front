@@ -2,7 +2,7 @@ import "./Header.css";
 import logo from "../../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ showModal, setShowModal, setModalForm }) => {
+const Header = ({ setShowModal, setModalForm }) => {
   return (
     <header>
       <div className="container">
@@ -16,12 +16,19 @@ const Header = ({ showModal, setShowModal, setModalForm }) => {
           <button
             onClick={() => {
               setModalForm("Signup");
-              setShowModal(!showModal);
+              setShowModal(true);
             }}
           >
             S'inscrire
           </button>
-          <button>Se connecter</button>
+          <button
+            onClick={() => {
+              setModalForm("Login");
+              setShowModal(true);
+            }}
+          >
+            Se connecter
+          </button>
           <button className="teal">Vends tes articles</button>
         </div>
       </div>

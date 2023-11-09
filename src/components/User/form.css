@@ -10,3 +10,11 @@
   padding: 8px 16px;
   background-color: transparent;
 }
+
+.form-switcher {
+  color: var(--teal);
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  text-align: center;
+}

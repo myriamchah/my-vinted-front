@@ -28,12 +28,14 @@ function App() {
 
   return (
     <Router>
-      <Header {...{ showModal, setShowModal, setModalForm }} />
+      <Header {...{ setShowModal, setModalForm }} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
       </Routes>
-      {showModal && <Modal {...{ setShowModal, setUser, modalForm }} />}
+      {showModal && (
+        <Modal {...{ setShowModal, setUser, modalForm, setModalForm }} />
+      )}
     </Router>
   );
 }

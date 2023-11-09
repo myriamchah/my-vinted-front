@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./form.css";
 import axios from "axios";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ setUser, setModalForm }) => {
   const [account, setAccount] = useState({
     username: "",
     email: "",
@@ -65,6 +65,9 @@ const Signup = ({ setUser }) => {
           S'inscrire
         </button>
       </form>
+      <div className="form-switcher" onClick={() => setModalForm("Login")}>
+        Tu as déjà un compte ? Connecte-toi !
+      </div>
     </>
   );
 };
