@@ -6,8 +6,18 @@ import "./modal.css";
 
 const Modal = ({ setShowModal, setUser, modalForm, setModalForm }) => {
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div
+      className="modal"
+      onClick={() => {
+        setShowModal(false);
+      }}
+    >
+      <div
+        className="modal-content"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <div className="modal-title">
           <h2>{modalForm === "Signup" ? "S'inscrire" : "Se connecter"}</h2>
           <FontAwesomeIcon
