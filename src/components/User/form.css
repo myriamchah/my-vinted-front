@@ -1,0 +1,12 @@
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.account-form input {
+  border: none;
+  border-bottom: 1px solid coral;
+  padding: 8px 16px;
+  background-color: transparent;
+}

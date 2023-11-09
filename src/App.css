@@ -29,3 +29,18 @@ main {
 .bg-lightgrey {
   background-color: var(--lightgrey);
 }
+
+button {
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 8px 16px;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  background-color: white;
+  cursor: pointer;
+}
+
+button.teal {
+  background-color: var(--teal);
+  color: white;
+}

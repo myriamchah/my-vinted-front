@@ -8,14 +8,16 @@ const Modal = ({ setShowModal, setUser, modalForm }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <FontAwesomeIcon
-          icon="xmark"
-          className="icon"
-          onClick={() => {
-            setShowModal(false);
-          }}
-        />
-
+        <div className="modal-title">
+          <h2>{modalForm === "Signup" ? "S'inscrire" : "Se connecter"}</h2>
+          <FontAwesomeIcon
+            icon="xmark"
+            className="icon"
+            onClick={() => {
+              setShowModal(false);
+            }}
+          />
+        </div>
         {modalForm === "Signup" ? (
           <Signup {...{ setUser }} />
         ) : (

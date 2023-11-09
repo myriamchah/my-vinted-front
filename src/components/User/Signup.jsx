@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import "./form.css";
 import axios from "axios";
 
 const Signup = ({ setUser }) => {
@@ -42,8 +42,7 @@ const Signup = ({ setUser }) => {
 
   return (
     <>
-      <h2>S'inscrire</h2>
-      <form onSubmit={onSubmit} className="signup-form">
+      <form onSubmit={onSubmit} className="account-form">
         <input
           type="text"
           placeholder="Nom d'utilisateur"
@@ -62,20 +61,10 @@ const Signup = ({ setUser }) => {
           value={account.password}
           onChange={onChange}
         />
-        <div className="checkbox-container">
-          <div>
-            <input type="checkbox" />
-            <span>S'inscrire à notre newsletter</span>
-          </div>
-          <p>
-            En m'inscrivant je confirme avoir lu et accepté les Termes &
-            Conditions et Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
-        </div>
-        <button type="submit">S'inscrire</button>
+        <button className="teal" type="submit">
+          S'inscrire
+        </button>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
     </>
   );
 };

@@ -12,7 +12,14 @@
 
 .modal-content {
   background-color: white;
-  width: 40vw;
+  width: 30vw;
   height: 60vh;
   padding: 40px;
+  border-radius: 16px;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
 }
