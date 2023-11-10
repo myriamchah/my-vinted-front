@@ -15,6 +15,7 @@ function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [showModal, setShowModal] = useState(false);
   const [modalForm, setModalForm] = useState("");
+  const [searched, setSearched] = useState("");
 
   const setUser = (token) => {
     if (token) {
@@ -28,9 +29,11 @@ function App() {
 
   return (
     <Router>
-      <Header {...{ token, setUser, setShowModal, setModalForm }} />
+      <Header
+        {...{ token, setUser, setShowModal, setModalForm, setSearched }}
+      />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home {...{ searched }} />} />
         <Route path="/offer/:id" element={<Offer />} />
       </Routes>
       {showModal && (

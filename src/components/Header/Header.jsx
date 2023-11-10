@@ -3,7 +3,13 @@ import logo from "../../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ setShowModal, setModalForm, token, setUser }) => {
+const Header = ({
+  setShowModal,
+  setModalForm,
+  token,
+  setUser,
+  setSearched,
+}) => {
   const navigate = useNavigate();
 
   return (
@@ -17,7 +23,18 @@ const Header = ({ setShowModal, setModalForm, token, setUser }) => {
           }}
         />
         <div className="input-search">
-          <input type="text" placeholder="Recherche des articles" />
+          <input
+            type="text"
+            placeholder="Recherche des articles"
+            onChange={(e) => {
+              setSearched(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                navigate("/");
+              }
+            }}
+          />
           <FontAwesomeIcon icon="magnifying-glass" className="icon" />
         </div>
 
