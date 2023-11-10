@@ -13,6 +13,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  gap: 16px;
 }
 
 header img {
@@ -47,13 +48,18 @@ header button {
 }
 
 .sort-section {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  flex-grow: 0.3;
 }
 
-.sort-section > span {
+.sort-section > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-section > div > span {
   font-size: 12px;
+  width: 100px;
 }
 
 .switch {

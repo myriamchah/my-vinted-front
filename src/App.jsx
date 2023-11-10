@@ -17,6 +17,7 @@ function App() {
   const [modalForm, setModalForm] = useState("");
   const [searched, setSearched] = useState("");
   const [sortAsc, setSortAsc] = useState(false);
+  const [range, setRange] = useState([0, 200]);
 
   const setUser = (token) => {
     if (token) {
@@ -39,13 +40,11 @@ function App() {
           setSearched,
           setSortAsc,
           sortAsc,
+          setRange,
         }}
       />
       <Routes>
-        <Route
-          path="/"
-          element={<Home {...{ searched, sortAsc, setSortAsc }} />}
-        />
+        <Route path="/" element={<Home {...{ searched, sortAsc, range }} />} />
         <Route path="/offer/:id" element={<Offer />} />
       </Routes>
       {showModal && (
