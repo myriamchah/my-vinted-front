@@ -16,6 +16,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalForm, setModalForm] = useState("");
   const [searched, setSearched] = useState("");
+  const [sortAsc, setSortAsc] = useState(false);
 
   const setUser = (token) => {
     if (token) {
@@ -30,10 +31,21 @@ function App() {
   return (
     <Router>
       <Header
-        {...{ token, setUser, setShowModal, setModalForm, setSearched }}
+        {...{
+          token,
+          setUser,
+          setShowModal,
+          setModalForm,
+          setSearched,
+          setSortAsc,
+          sortAsc,
+        }}
       />
       <Routes>
-        <Route path="/" element={<Home {...{ searched }} />} />
+        <Route
+          path="/"
+          element={<Home {...{ searched, sortAsc, setSortAsc }} />}
+        />
         <Route path="/offer/:id" element={<Offer />} />
       </Routes>
       {showModal && (

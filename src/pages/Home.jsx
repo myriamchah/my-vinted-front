@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Banner from "../components/Banner/Banner";
 import Card from "../components/Card/Card";
 
-const Home = ({ searched }) => {
+const Home = ({ searched, sortAsc }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +12,9 @@ const Home = ({ searched }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${searched}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${searched}&sort=${
+            sortAsc ? "price-asc" : "price-desc"
+          }`
         );
         setData(response.data);
         setIsLoading(false);
@@ -21,7 +23,7 @@ const Home = ({ searched }) => {
       }
     };
     fetchData();
-  }, [searched]);
+  }, [searched, sortAsc]);
 
   return (
     <>

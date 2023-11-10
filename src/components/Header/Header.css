@@ -45,3 +45,61 @@ header img {
 header button {
   margin-left: 8px;
 }
+
+.sort-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-section > span {
+  font-size: 12px;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.switch input {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 0;
+  height: 0;
+}
+
+.switch input + span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--teal);
+  border-radius: 20px;
+}
+
+.switch input + span:before {
+  content: "↓";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+  text-align: center;
+  color: var(--teal);
+}
+
+.switch input:checked + span:before {
+  right: 17px;
+  content: "↑";
+}

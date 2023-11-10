@@ -9,6 +9,8 @@ const Header = ({
   token,
   setUser,
   setSearched,
+  sortAsc,
+  setSortAsc,
 }) => {
   const navigate = useNavigate();
 
@@ -36,6 +38,22 @@ const Header = ({
             }}
           />
           <FontAwesomeIcon icon="magnifying-glass" className="icon" />
+        </div>
+        <div className="sort-section">
+          <span>Trier par prix</span>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={sortAsc}
+              onClick={() => {
+                setSortAsc(!sortAsc);
+              }}
+              onChange={() => {
+                console.log(sortAsc);
+              }}
+            />
+            <span></span>
+          </label>
         </div>
 
         <div>
