@@ -9,11 +9,15 @@ const Offer = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-      );
-      setOffer(response.data);
-      setIsLoading(false);
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+        );
+        setOffer(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response.data);
+      }
     };
     fetchData();
   }, [id]);

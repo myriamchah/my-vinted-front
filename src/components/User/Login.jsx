@@ -8,6 +8,7 @@ const Login = ({ setUser, setModalForm, setShowModal }) => {
     email: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const onChange = (e) => {
@@ -18,8 +19,9 @@ const Login = ({ setUser, setModalForm, setShowModal }) => {
   };
 
   const onSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
+      setErrorMessage("");
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         {
@@ -35,7 +37,7 @@ const Login = ({ setUser, setModalForm, setShowModal }) => {
         alert("Oops! Please try again.");
       }
     } catch (error) {
-      console.log(error.message);
+      setErrorMessage(error.response.data.message);
     }
   };
 
@@ -56,6 +58,7 @@ const Login = ({ setUser, setModalForm, setShowModal }) => {
           value={account.password}
           onChange={onChange}
         />
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         <button className="teal" type="submit">
           Se connecter
         </button>
