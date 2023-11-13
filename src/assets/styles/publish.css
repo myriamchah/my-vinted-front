@@ -1,0 +1,8 @@
+.publish-container {
+  padding: 60px 0;
+}
+
+.publish-form {
+  display: flex;
+  flex-direction: column;
+}

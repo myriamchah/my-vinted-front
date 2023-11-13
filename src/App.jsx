@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
+import Publish from "./pages/Publish";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -46,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home {...{ searched, sortAsc, range }} />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
       {showModal && (
         <Modal {...{ setShowModal, setUser, modalForm, setModalForm }} />
