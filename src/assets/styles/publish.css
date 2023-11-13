@@ -3,6 +3,60 @@
 }
 
 .publish-form {
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
+}
+
+.form-card {
+  width: 100%;
+  border: 1px solid var(--grey);
+  background-color: white;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.form-card:first-of-type {
+  text-align: center;
+  padding: 32px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.form-group:not(:nth-last-of-type(1)) {
+  margin-bottom: 12px;
+}
+
+.form-group input {
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid var(--lightgrey);
+}
+
+.form-checkbox {
+  float: right;
+  width: 60%;
+}
+
+.form-checkbox label {
+  margin-left: 4px;
+}
+
+input[type="file" i],
+::file-selector-button {
+  display: none;
+}
+
+label[for="file"] {
+  text-align: center !important;
+  cursor: pointer;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: 4px;
+  padding: 8px;
+  overflow: hidden !important;
 }
