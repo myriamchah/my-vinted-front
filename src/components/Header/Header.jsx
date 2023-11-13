@@ -16,12 +16,22 @@ const Header = ({
 }) => {
   const navigate = useNavigate();
 
+  const checkToken = () => {
+    if (token) {
+      navigate("/publish");
+    } else {
+      setModalForm("Login");
+      setShowModal(true);
+    }
+  };
+
   return (
     <header>
       <div className="container">
         <img
           src={logo}
           alt="logo Vinted"
+          style={{ cursor: "pointer" }}
           onClick={() => {
             navigate("/");
           }}
@@ -69,6 +79,7 @@ const Header = ({
             <button
               onClick={() => {
                 setUser("");
+                navigate("/");
               }}
               className="coral"
             >
@@ -95,7 +106,9 @@ const Header = ({
             </>
           )}
 
-          <button className="teal">Vends tes articles</button>
+          <button className="teal" onClick={checkToken}>
+            Vends tes articles
+          </button>
         </div>
       </div>
     </header>

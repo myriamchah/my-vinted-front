@@ -47,7 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home {...{ searched, sortAsc, range }} />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/publish" element={<Publish />} />
+        <Route path="/publish" element={<Publish {...{ token }} />} />
       </Routes>
       {showModal && (
         <Modal {...{ setShowModal, setUser, modalForm, setModalForm }} />
