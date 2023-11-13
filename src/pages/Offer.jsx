@@ -31,7 +31,7 @@ const Offer = () => {
           <section className="container offer-container">
             <img
               className="offer-img"
-              src={offer.product_image.secure_url}
+              src={offer.product_image?.secure_url}
               alt={offer.product_name}
             />
             <div className="offer-card">
@@ -53,7 +53,7 @@ const Offer = () => {
               </div>
               <div className="avatar">
                 <img
-                  src={offer.owner.account.avatar.secure_url}
+                  src={offer.owner.account.avatar?.secure_url}
                   alt={"avatar" + offer.owner.account.username}
                 />
                 <span>{offer.owner && offer.owner.account.username}</span>

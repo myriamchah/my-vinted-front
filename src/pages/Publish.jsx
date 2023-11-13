@@ -14,7 +14,7 @@ const Publish = ({ token }) => {
     brand: "",
     size: "",
     color: "",
-    picture: "",
+    picture: {},
     acceptExchange: false,
   });
 
@@ -28,6 +28,7 @@ const Publish = ({ token }) => {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
+
       const formData = new FormData();
       formData.append("title", newOffer.title);
       formData.append("description", newOffer.description);
@@ -50,6 +51,7 @@ const Publish = ({ token }) => {
           },
         }
       );
+
       if (response.data._id) {
         alert("Offer successfully created");
       } else {
@@ -74,10 +76,7 @@ const Publish = ({ token }) => {
                   type="file"
                   className="input-file"
                   onChange={(e) => {
-                    setNewOffer({
-                      ...newOffer,
-                      [newOffer.picture]: e.target.files[0],
-                    });
+                    newOffer.picture = e.target.files[0];
                   }}
                 />
                 <label htmlFor="file"> + Ajoute une photo</label>

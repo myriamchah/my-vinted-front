@@ -11,7 +11,7 @@
 
 .offer-card {
   background: white;
-  max-width: 30vw;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
