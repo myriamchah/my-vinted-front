@@ -94,7 +94,7 @@ const Publish = ({ token }) => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="description">Description</label>
-                  <input
+                  <textarea
                     type="textarea"
                     placeholder="ex : porté plusieurs fois, taille correctement"
                     name="description"

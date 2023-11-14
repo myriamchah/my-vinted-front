@@ -31,7 +31,8 @@
   margin-bottom: 12px;
 }
 
-.form-group input {
+.form-group input,
+textarea {
   width: 60%;
   border: none;
   border-bottom: 1px solid var(--lightgrey);
