@@ -46,7 +46,21 @@ function App() {
         }}
       />
       <Routes>
-        <Route path="/" element={<Home {...{ searched, sortAsc, range }} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              {...{
+                searched,
+                sortAsc,
+                range,
+                token,
+                setModalForm,
+                setShowModal,
+              }}
+            />
+          }
+        />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/publish" element={<Publish {...{ token }} />} />
         <Route path="/payment" element={<Payment {...{ token }} />} />

@@ -4,7 +4,14 @@ import { useState, useEffect } from "react";
 import Banner from "../components/Banner/Banner";
 import Card from "../components/Card/Card";
 
-const Home = ({ searched, sortAsc, range }) => {
+const Home = ({
+  searched,
+  sortAsc,
+  range,
+  token,
+  setModalForm,
+  setShowModal,
+}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -31,7 +38,7 @@ const Home = ({ searched, sortAsc, range }) => {
         <span>En cours de chargement... </span>
       ) : (
         <main>
-          <Banner />
+          <Banner {...{ token, setModalForm, setShowModal }} />
           <section className="cards-wrapper container">
             {data.offers.map((offer) => {
               return <Card key={offer.id} {...{ offer }} />;

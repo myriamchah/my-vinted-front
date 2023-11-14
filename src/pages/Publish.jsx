@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
 
 import "../assets/styles/publish.css";
@@ -17,6 +17,7 @@ const Publish = ({ token }) => {
     picture: {},
     acceptExchange: false,
   });
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setNewOffer((newOffer) => ({
@@ -54,6 +55,7 @@ const Publish = ({ token }) => {
 
       if (response.data._id) {
         alert("Offer successfully created");
+        navigate("/");
       } else {
         alert("Oops! Please try again.");
       }
