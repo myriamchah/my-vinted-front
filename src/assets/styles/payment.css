@@ -1,0 +1,49 @@
+.payment-container {
+  padding: 60px 0;
+}
+
+.payment-card {
+  width: 50%;
+  border: 1px solid var(--grey);
+  background-color: white;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.payment-card h2,
+h3 {
+  margin-bottom: 32px;
+}
+
+.payment-card div {
+  margin-bottom: 16px;
+  color: var(--grey);
+}
+
+.payment-card > div:not(:last-of-type) > span,
+h3 span {
+  float: right;
+}
+
+.payment-card > div:last-of-type > span {
+  font-weight: 600;
+  color: black;
+}
+
+.StripeElement {
+  border: 1px solid var(--lightgrey);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.payment-card button {
+  width: 100%;
+  font-size: 16px;
+}
+
+.payment-success {
+  text-align: center;
+  color: var(--teal);
+}

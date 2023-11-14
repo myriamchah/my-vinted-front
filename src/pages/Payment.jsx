@@ -12,13 +12,40 @@ const Payment = () => {
   );
   const { title, price, username } = location.state;
 
+  const buyerFees = 1;
+  const shippingFees = 5;
+  const totalPrice = +price + buyerFees + shippingFees;
+
   return (
     <>
       <main className="bg-lightgrey">
-        <section className="container publish-container">
-          <Elements stripe={stripePromise}>
-            <CheckoutForm {...{ title, price, username }} />
-          </Elements>
+        <section className="container payment-container">
+          <div className="payment-card">
+            <h2>Résumé de la commande</h2>
+            <div>
+              Commande <span>{price} €</span>
+            </div>
+            <div>
+              Frais protection acheteurs <span>{buyerFees} €</span>
+            </div>
+            <div>
+              Frais de port <span>{shippingFees} €</span>
+            </div>
+            <hr />
+            <h3>
+              Total <span>{totalPrice} €</span>
+            </h3>
+            <div>
+              Il ne vous reste plus qu'une étape pour vous offrir
+              <span> {title}.</span>
+              Vous allez payer <span>{totalPrice} €</span> (frais de protection
+              et frais de port inclus)
+            </div>
+            <hr />
+            <Elements stripe={stripePromise}>
+              <CheckoutForm {...{ title, totalPrice, username, buyerFees }} />
+            </Elements>
+          </div>
         </section>
       </main>
     </>

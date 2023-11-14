@@ -2,7 +2,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
 
-const CheckoutForm = ({ title, price, username }) => {
+const CheckoutForm = ({ title, totalPrice, username }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [succeeded, setSucceeded] = useState(false);
 
@@ -25,7 +25,7 @@ const CheckoutForm = ({ title, price, username }) => {
         {
           token: stripeToken,
           title: title,
-          amount: price,
+          amount: totalPrice,
         }
       );
       console.log(response.data);
@@ -40,15 +40,21 @@ const CheckoutForm = ({ title, price, username }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <CardElement />
-
+    <>
       {succeeded ? (
-        <p>Paiement bien reçu. Merci pour votre commande.</p>
+        <p className="payment-success">
+          Paiement bien reçu. Merci pour votre commande !
+        </p>
       ) : (
-        <input type="submit" value="Acheter" disabled={isLoading} />
+        <form onSubmit={onSubmit}>
+          <CardElement />
+
+          <button className="teal" type="submit">
+            Acheter
+          </button>
+        </form>
       )}
-    </form>
+    </>
   );
 };
 
