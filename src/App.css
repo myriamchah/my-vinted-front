@@ -29,6 +29,7 @@ main {
 
 .bg-lightgrey {
   background-color: var(--lightgrey);
+  min-height: 100vh;
 }
 
 button {
