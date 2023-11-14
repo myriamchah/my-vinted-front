@@ -8,6 +8,7 @@ const Signup = ({ setUser, setModalForm, setShowModal }) => {
     username: "",
     email: "",
     password: "",
+    avatar: {},
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -23,14 +24,17 @@ const Signup = ({ setUser, setModalForm, setShowModal }) => {
     e.preventDefault();
     try {
       setErrorMessage("");
+      const formData = new FormData();
+      formData.append("username", account.username);
+      formData.append("email", account.email);
+      formData.append("password", account.password);
+      formData.append("avatar", account.avatar);
+
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        {
-          email: account.email,
-          password: account.password,
-          username: account.username,
-        }
+        formData
       );
+
       if (response.data.token) {
         setUser(response.data.token);
         alert("Account successfully created");
@@ -72,6 +76,15 @@ const Signup = ({ setUser, setModalForm, setShowModal }) => {
           value={account.password}
           onChange={onChange}
         />
+        <input
+          id="file"
+          type="file"
+          className="input-file"
+          onChange={(e) => {
+            account.avatar = e.target.files[0];
+          }}
+        />{" "}
+        <label htmlFor="file"> + Ajoute une photo</label>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <button className="teal" type="submit">
           S'inscrire
